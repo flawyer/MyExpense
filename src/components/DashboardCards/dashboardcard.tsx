@@ -14,7 +14,7 @@ export function CardForDashboard({ Title, Detail }: CardWithDashboardProps) {
         {Title}
       </div>
       <div className="Sh">
-        {Detail}
+        {}
       </div>
     </div>
   )
