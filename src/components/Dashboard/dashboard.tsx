@@ -31,7 +31,7 @@ export default function Dashboard() {
     return (
         <>
             <div className='IncomeHeader text-center w-[100%] my-5 text-large'>
-                <h2>Income</h2>
+                <h2 className='text-2xl font-extrabold'>Income</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center">
                 <CardForDashboard Title="Daily Earning" Detail={dashboardData?.dailyAmount?.toString() || "Loading..."} />
@@ -44,7 +44,7 @@ export default function Dashboard() {
                 <CardForDashboard Title="Most Earning Source" Detail="China"/>
             </div>
             <div className='IncomeHeader text-center w-[100%] my-5 text-large'>
-                <h2>Expense</h2>
+                <h2 className='text-2xl font-extrabold'>Expense</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center">
                 <CardForDashboard Title="Daily Expense" Detail="100" />
