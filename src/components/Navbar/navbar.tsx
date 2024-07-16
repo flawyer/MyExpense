@@ -47,6 +47,12 @@ function NavBar() {
           <Link href='/Expense'>
             <p className="block text-white">Expense</p>
           </Link>
+          <Link href='/Details/incomeDetails'>
+            <p className="text-white">Details</p>
+          </Link>
+          <Link href='/Settings/IncomeForm'>
+            <p className="text-white">Settings</p>
+          </Link>
         </div>
       )}
     </nav>
