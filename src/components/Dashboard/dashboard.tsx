@@ -33,12 +33,34 @@ interface YearlyDetails {
     totalExpense: number;
     yearlySaving: number;
 }
+interface maxminDetails
+{
+    maxExpenseFormName: string;
+    minExpenseFormName : string;
+}
 
+interface otherDetails{
+    Amount : number;
+}
+interface cashDetails{
+    Amount : number;
+}
+interface BankDetails{
+    Amount : number;
+}
+interface maxIncomeDetails{
+    maxIncomeFormName :string;
+}
 interface DashboardData {
     dailyDetails: DailyDetails;
     weeklyDetails: WeeklyDetails;
     monthlyDetails: MonthlyDetails;
     yearlyDetails: YearlyDetails;
+    maxminDetails : maxminDetails;
+    otherDetails : otherDetails;
+    cashDetails : cashDetails;
+    BankDetails : BankDetails;
+    maxIncomeDetails : maxIncomeDetails;
 }
 
 export default function Dashboard() {
@@ -64,9 +86,9 @@ debugger;
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center">
                 <CardForDashboard Title="Daily Earning" Detail={dashboardData?.dailyDetails.dailySaving?.toString() || "Loading..."} />
-                <CardForDashboard Title="Cash In Hand" Detail=""/>
-                <CardForDashboard Title="Bank" Detail="100"/>
-                <CardForDashboard Title="Others" Detail="100"/>
+                <CardForDashboard Title="Cash In Hand"  Detail={dashboardData?.cashDetails?.toString() || "Loading..."} />
+                <CardForDashboard Title="Bank" Detail={dashboardData?.BankDetails?.toString() || "Loading..."}/>
+                <CardForDashboard Title="Others" Detail={dashboardData?.otherDetails?.toString() || "Loading..."}/>
                 <CardForDashboard Title="Weekly Earning" Detail={dashboardData?.weeklyDetails.weeklySaving?.toString() || "Loading..."} />
                 <CardForDashboard Title="Monthly Earning" Detail={dashboardData?.monthlyDetails.monthlySaving?.toString() || "Loading..."} />
                 <CardForDashboard Title="Yearly Earning" Detail={dashboardData?.yearlyDetails.yearlySaving?.toString() || "Loading..."} />
@@ -80,8 +102,8 @@ debugger;
                 <CardForDashboard Title="Weekly Expense" Detail={dashboardData?.weeklyDetails.totalExpense?.toString() || "Loading..."} />
                 <CardForDashboard Title="Monthly Expense" Detail={dashboardData?.monthlyDetails.totalExpense?.toString() || "Loading..."} />
                 <CardForDashboard Title="Yearly Expense" Detail={dashboardData?.yearlyDetails.totalExpense?.toString() || "Loading..."} />
-                <CardForDashboard Title="Most Expense From" Detail="100" />
-                <CardForDashboard Title="Minimum Expense From" Detail="100"/>
+                <CardForDashboard Title="Most Expense From"  Detail={dashboardData?.maxminDetails.maxExpenseFormName?.toString() || "Loading..."} />
+                <CardForDashboard Title="Minimum Expense From" Detail={dashboardData?.maxminDetails.maxExpenseFormName?.toString() || "Loading..."}  />
             </div>
         </>
     );
