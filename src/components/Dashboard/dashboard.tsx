@@ -92,7 +92,7 @@ debugger;
                 <CardForDashboard Title="Weekly Earning" Detail={dashboardData?.weeklyDetails.weeklySaving?.toString() || "Loading..."} />
                 <CardForDashboard Title="Monthly Earning" Detail={dashboardData?.monthlyDetails.monthlySaving?.toString() || "Loading..."} />
                 <CardForDashboard Title="Yearly Earning" Detail={dashboardData?.yearlyDetails.yearlySaving?.toString() || "Loading..."} />
-                <CardForDashboard Title="Most Earning Source" Detail="China"/>
+                <CardForDashboard Title="Most Earning Source" Detail={dashboardData?.maxIncomeDetails.maxIncomeFormName?.toString() || "Loading..."}/>
             </div>
             <div className='IncomeHeader text-center w-[100%] my-5 text-large'>
                 <h2 className='text-2xl font-extrabold'>Expense</h2>
