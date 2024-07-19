@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ColumnDef } from "@tanstack/react-table";
 
-// Function to get data
 async function getData(): Promise<IncomeForm[]> {
   try {
     const response = await axios.get(process.env.NEXT_PUBLIC_API+'api/IncomeForm');
@@ -106,6 +105,7 @@ export default function DemoPage() {
               <input
                 type="text"
                 id="incomeForm"
+                placeholder="Enter Income Form Name"
                 value={formData}
                 onChange={(e) => setFormData(e.target.value)}
                 className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"

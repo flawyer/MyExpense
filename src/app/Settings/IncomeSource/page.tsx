@@ -103,10 +103,12 @@ export default function DemoPage() {
             <h2 className="text-xl font-bold mb-4">Add New Income Source</h2>
             <div className="mb-4">
               <label htmlFor="incomeSource" className="block text-gray-700 mb-2">Income Source</label>
+              
               <input
                 type="text"
                 id="incomeSource"
                 value={formData}
+                placeholder="Enter Income Source Name"
                 onChange={(e) => setFormData(e.target.value)}
                 className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
