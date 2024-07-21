@@ -1,10 +1,10 @@
 import NavBar from "@/components/Navbar/navbar"
-import { Payment, columns } from "./column"
+import { Income,columns } from "./column"
 import { DataTable } from "./data-table"
 import Link from "next/link"
 
 
-async function getData(): Promise<Payment[]> {
+async function getData(): Promise<Income[]> {
   // Fetch data from your API here.
   return [
    
