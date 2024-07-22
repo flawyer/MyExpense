@@ -14,6 +14,10 @@ export type Income = {
 
 export const columns: ColumnDef<Income>[] = [
   {
+    accessorKey: "sn",
+    header: "SN",
+  },
+  {
     accessorKey: "incomeForm",
     header: "Income Form",
   },

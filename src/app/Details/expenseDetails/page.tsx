@@ -2,18 +2,27 @@ import NavBar from "@/components/Navbar/navbar"
 import { Expense, columns } from "./column"
 import { DataTable } from "./data-table"
 import Link from "next/link"
+import axios from "axios";
 
 
 async function getData(): Promise<Expense[]> {
-  // Fetch data from your API here.
-  return [
-   
-  ]
+  try {
+    const response = await axios.get(process.env.NEXT_PUBLIC_API+'api/Expense');
+    return response.data.map((item: Expense, index: number) => ({
+      ...item,
+      sn: index + 1,
+    }));
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    alert('Error fetching data. Please try again.');
+    return [];
+  }
+  
 }
 
 export default async function DemoPage() {
   const data = await getData()
-
+  debugger;
   return (
     <>    
     <NavBar />
