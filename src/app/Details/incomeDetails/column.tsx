@@ -2,36 +2,38 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
+// Define the shape of the income data
 export type Income = {
   _id: string
+  sn?: number // Adding optional sn field
   incomeAmount: number
-  incomeForm : string
-  incomeSource : string
-  incomeDate : string
+  incomeFormName: string
+  incomeSourceName: string
+  incomeDate: string
 }
 
+// Define the columns for the table
 export const columns: ColumnDef<Income>[] = [
   {
     accessorKey: "sn",
     header: "SN",
   },
   {
-    accessorKey: "incomeForm",
+    accessorKey: "incomeFormName",
     header: "Income Form",
   },
   {
-    accessorKey: "incomeSource",
+    accessorKey: "incomeSourceName",
     header: "Income Source",
   },
   {
     accessorKey: "incomeAmount",
     header: "Amount",
+    cell: info => `${info.getValue()}`
   },
   {
     accessorKey: "incomeDate",
     header: "Date",
+    cell: info => new Date(info.getValue() as string).toLocaleDateString()
   },
-
 ]

@@ -8,13 +8,13 @@ import axios from "axios";
 async function getData(): Promise<Expense[]> {
   try {
     const response = await axios.get(process.env.NEXT_PUBLIC_API+'api/Expense');
-    return response.data.map((item: Expense, index: number) => ({
+    return response.data.map((item: any, index: number) => ({
       ...item,
+      expenseAmount: parseFloat(item.expenseAmount.$numberDecimal),
       sn: index + 1,
     }));
   } catch (error) {
     console.error('Error fetching data:', error);
-    alert('Error fetching data. Please try again.');
     return [];
   }
   
