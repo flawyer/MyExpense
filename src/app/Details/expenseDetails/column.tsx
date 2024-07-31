@@ -12,7 +12,7 @@ export type Expense = {
 }
 
 // Define the columns for the table
-export const columns: ColumnDef<Income>[] = [
+export const columns: ColumnDef<Expense>[] = [
   {
     accessorKey: "sn",
     header: "SN",
