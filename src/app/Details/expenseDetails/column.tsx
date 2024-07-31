@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 
-export type Income = {
+export type Expense = {
   _id: string
   sn?: number 
   expenseAmount: number
